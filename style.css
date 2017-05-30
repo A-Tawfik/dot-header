@@ -1,0 +1,60 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.input-container{
+  border: 1px dotted black;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-gap: .5vw;
+}
+
+input, button{
+  width: 80%;
+  margin: 0 auto;
+  margin-left: 9px;
+}
+
+
+.dot-container{
+  background: black;
+  border: 1px dotted black;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-gap: .2vw;
+  /*grid-template-columns: repeat(67, 1vw);*/
+  grid-template-rows: 10.5vw;
+}
+
+.position{
+  display: grid;
+  grid-template-columns: repeat(8, 1vw);
+  grid-gap: .1vw;
+  grid-template-rows: repeat(9, 1vw);
+}
+
+.dot{
+  background: black;
+  border-radius: 20px;
+  box-shadow: gray 2px 3px 1px -2px;
+  border: 1px solid #171515;
+}
+.dot:hover{
+  box-shadow: yellow 0px 0px 9px;
+  z-index: 2;
+}
+
+.active{
+  background: #f33;
+  border-radius: 20px;
+  opacity: 0.6;
+  border: 1px solid #db6464;
+  box-shadow: #cb3131 1px 2px 7px 4px;
+}
+
+.sexting{
+  border-radius: 10px;
+  vertical-align: center;
+  font-size: 2em;
+  margin-left: 10%;
+}
