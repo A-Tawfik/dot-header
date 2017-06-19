@@ -20,7 +20,10 @@ function createDots(){
         dot.setAttribute("data-loc", j+"-"+k);
         dot.addEventListener("click", clickActive);
         positions[i].appendChild(dot);
-        // debugger;
+
+        var circle = document.createElement('div');
+        circle.classList.add('circle');
+        dot.appendChild(circle);
       }
     }
   }
@@ -72,6 +75,7 @@ function updateMarquee(e) {
 
 
 function clearPosition(i){
+
   var activeDots = positions[i].getElementsByClassName("dot");
   for (var i = 0; i < activeDots.length; i++) {
     activeDots[i].classList.remove("active");
