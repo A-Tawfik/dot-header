@@ -1,6 +1,8 @@
 *{
   padding: 0;
   margin: 0;
+  background: black;
+  color: white;
 }
 .input-container{
   border: 1px dotted black;
@@ -15,10 +17,42 @@ input, button{
   margin-left: 9px;
 }
 
+@keyframes bounce1 {
+  0%   { transform: translate(3px, 0px); }
+  25%   { transform: translate(0px, 3px); }
+  50%   { transform: translate(-3px, 0px); }
+  75%   { transform: translate(0px, -3px); }
+  100%   { transform: translate(3px, 0px); }
+}
+
+@keyframes bounce2 {
+  0%   { transform: translate(0px, 3px); }
+  25%%   { transform: translate(3px, 0px); }
+  50%   { transform: translate(0px, -3px); }
+  75%   { transform: translate(-3px, 0px); }
+  100%   { transform: translate(0px, 3px); }
+}
+
+@keyframes bounce3 {
+  0%   { transform: translate(-3px, 0px); }
+  25%   { transform: translate(0px, -3px); }
+  50%   { transform: translate(3px, 0px); }
+  75%   { transform: translate(0px, 3px); }
+  100%   { transform: translate(-3px, 0px); }
+}
+
+@keyframes bounce4 {
+  0%   { transform: translate(0px, 4px); }
+  25%   { transform: translate(-4px, 0px); }
+  50%   { transform: translate(0px, -4px); }
+  75%   { transform: translate(4px, 0px); }
+  100%   { transform: translate(0px, 4px); }
+}
+
 
 .dot-container{
-  background: black;
-  border: 1px dotted black;
+  /*background: skyblue;*/
+  /*border: 1px dotted black;*/
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-gap: .2vw;
@@ -34,25 +68,123 @@ input, button{
 }
 
 .dot{
-  background: black;
-  border-radius: 20px;
-  box-shadow: gray 2px 3px 1px -2px;
-  border: 1px solid #171515;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+
 }
+
+.dot:nth-of-type(even){
+  transform: translate(50vw, 0vh);
+  transition: all 1s ease-in-out;
+}
+
+.dot:nth-of-type(odd){
+  transform: translate(-50vw, -50vh);
+  transition: all 1s ease-in-out;
+}
+
+.dot:nth-of-type(5n+0){
+  transform: translate(50vw, -50vh);
+  transition: all 1s ease-in-out;
+}
+
+.dot:nth-of-type(7n+0){
+  transform: translate(-50vw, 50vh);
+  transition: all 1s ease-in-out;
+}
+
+.dot:nth-of-type(11n+0){
+  transform: translate(0vw, 50vh);
+  transition: all 1s ease-in-out;
+}
+
+.dot:nth-of-type(13n+0){
+  transform: translate(-50vw, 0vh);
+  transition: all 1s ease-in-out;
+}
+
+.dot:nth-of-type(27n+0){
+  transform: translate(0vw, -50vh);
+  transition: all 1s ease-in-out;
+}
+
+
 .dot:hover{
   box-shadow: yellow 0px 0px 9px;
   z-index: 2;
 }
 
+/*===============*/
 .active{
-  background: #f33;
-  border-radius: 20px;
   opacity: 0.6;
-  border: 1px solid #db6464;
-  box-shadow: #cb3131 1px 2px 7px 4px;
+  transform: translate(0vw, 0vh);
 }
 
-.sexting{
+.active:nth-of-type(even){
+  transform: translate(0vw, 0vh);
+  /*transition: all 1s ease-in-out;*/
+}
+
+.active:nth-of-type(odd){
+  transform: translate(-0vw, -0vh);
+  /*transition: all 1s ease-in-out;*/
+}
+
+.active:nth-of-type(5n+0){
+  transform: translate(0vw, -0vh);
+  /*transition: all 1s ease-in-out;*/
+}
+
+.active:nth-of-type(7n+0){
+  transform: translate(-0vw, 0vh);
+  /*transition: all 1s ease-in-out;*/
+}
+
+.active:nth-of-type(11n+0){
+  transform: translate(0vw, 0vh);
+  /*transition: all 1s ease-in-out;*/
+}
+
+.active:nth-of-type(13n+0){
+  transform: translate(-0vw, 0vh);
+  /*transition: all 1s ease-in-out;*/
+}
+
+.active:nth-of-type(27n+0){
+  transform: translate(0vw, -0vh);
+  /*transition: all 1s ease-in-out;*/
+}
+
+
+.circle{
+  background: green;
+  width: 100%;
+  height: 100%;
+  border-radius: 0% 197%;
+  opacity: 0.6;
+  border: 2px solid lightgreen;
+  box-shadow: -2px -2px 5px 4px #edf10f;
+  z-index: 1;
+}
+
+.active:nth-of-type(even) .circle{animation: bounce2 10s infinite alternate ease-in-out;}
+
+.active:nth-of-type(odd) .circle{animation: bounce3 10s infinite alternate ease-in-out;}
+
+.active:nth-of-type(5n+0) .circle {animation: bounce3 15s infinite alternate ease-in-out;}
+
+.active:nth-of-type(7n+0) .circle {animation: bounce4 20s infinite alternate ease-in-out;}
+
+.active:nth-of-type(11n+0) .circle {animation: bounce3 22s infinite alternate ease-in-out;}
+
+.active:nth-of-type(13n+0) .circle {animation: bounce1 20s infinite alternate ease-in-out;}
+
+.active:nth-of-type(27n+0) .circle {animation: bounce2 30s infinite alternate ease-in-out;}
+
+
+
+
+.marquee{
   border-radius: 10px;
   vertical-align: center;
   font-size: 2em;
